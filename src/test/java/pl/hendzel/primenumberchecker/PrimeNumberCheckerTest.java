@@ -25,4 +25,14 @@ class PrimeNumberCheckerTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> PrimeNumberChecker.isPrimeNumber(input));
     }
 
+    @Test
+    void isPrimeNumber_shouldThrowExceptionWhenInputIsFloatingPointNumber() {
+        //given
+        var input = "1.23";
+
+        //when
+        //then
+        Assertions.assertThrows(IllegalArgumentException.class, () -> PrimeNumberChecker.isPrimeNumber(input));
+    }
+
 }
