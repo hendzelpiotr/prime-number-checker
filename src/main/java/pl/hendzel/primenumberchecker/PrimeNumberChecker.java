@@ -8,7 +8,7 @@ public final class PrimeNumberChecker {
     }
 
     public static Boolean isPrimeNumber(String number) {
-        if (!NumberUtils.isParsable(number)) {
+        if (isNotNumber(number)) {
             throw new IllegalArgumentException("Input is not a number");
         } else if (isNegativeNumber(number)) {
             throw new IllegalArgumentException("Input is a negative number");
@@ -16,6 +16,10 @@ public final class PrimeNumberChecker {
             throw new IllegalArgumentException("Input is a floating point number");
         }
         return false;
+    }
+
+    private static boolean isNotNumber(String number) {
+        return !NumberUtils.isParsable(number);
     }
 
     private static boolean isNegativeNumber(String number) {
