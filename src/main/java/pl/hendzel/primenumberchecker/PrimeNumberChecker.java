@@ -1,6 +1,7 @@
 package pl.hendzel.primenumberchecker;
 
 import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.commons.math3.primes.Primes;
 
 public final class PrimeNumberChecker {
 
@@ -15,7 +16,7 @@ public final class PrimeNumberChecker {
         } else if (isFloatingPointNumber(number)) {
             throw new IllegalArgumentException("Input is a floating point number");
         }
-        return null;
+        return Primes.isPrime(Integer.parseInt(number));
     }
 
     private static boolean isNotNumber(String number) {
