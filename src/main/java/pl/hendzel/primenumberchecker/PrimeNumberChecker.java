@@ -10,8 +10,14 @@ public final class PrimeNumberChecker {
     public static Boolean isPrimeNumber(String number) {
         if (!StringUtils.isNumeric(number)) {
             throw new IllegalArgumentException("Input is not a number");
+        } else if (isNegativeNumber(number)) {
+            throw new IllegalArgumentException("Input is a negative number");
         }
         return null;
+    }
+
+    private static boolean isNegativeNumber(String number) {
+        return Double.parseDouble(number) < 0;
     }
 
 }
