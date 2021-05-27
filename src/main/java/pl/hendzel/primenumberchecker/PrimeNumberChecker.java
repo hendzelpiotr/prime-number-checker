@@ -12,16 +12,10 @@ public final class PrimeNumberChecker {
             throw new IllegalArgumentException("Input is not a number");
         } else if (isNegativeNumber(number)) {
             throw new IllegalArgumentException("Input is a negative number");
+        } else if (isFloatingPointNumber(number)) {
+            throw new IllegalArgumentException("Input is a floating point number");
         }
         return false;
-    }
-
-    private static boolean isNotNumber(String number) {
-        try {
-            return false;
-        } catch (IllegalArgumentException e) {
-            return true;
-        }
     }
 
     private static boolean isNegativeNumber(String number) {
@@ -29,12 +23,17 @@ public final class PrimeNumberChecker {
     }
 
     private static boolean isFloatingPointNumber(String number) {
-       try {
-           Integer.parseInt(number);
-       } catch (NumberFormatException e) {
-           return true;
-       }
-       return false;
+        try {
+            Integer.parseInt(number);
+        } catch (NumberFormatException e) {
+            try {
+                Double.parseDouble(number);
+            } catch (NumberFormatException e2) {
+                return false;
+            }
+            return true;
+        }
+        return false;
     }
 
 }
