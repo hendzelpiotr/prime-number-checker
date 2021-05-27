@@ -15,4 +15,14 @@ class PrimeNumberCheckerTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> PrimeNumberChecker.isPrimeNumber(input));
     }
 
+    @Test
+    void isPrimeNumber_shouldThrowExceptionWhenInputIsNegativeNumber() {
+        //given
+        var input = "-1";
+
+        //when
+        //then
+        Assertions.assertThrows(IllegalArgumentException.class, () -> PrimeNumberChecker.isPrimeNumber(input));
+    }
+
 }
