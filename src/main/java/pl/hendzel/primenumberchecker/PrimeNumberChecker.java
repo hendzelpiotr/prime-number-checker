@@ -13,7 +13,7 @@ public final class PrimeNumberChecker {
         } else if (isNegativeNumber(number)) {
             throw new IllegalArgumentException("Input is a negative number");
         }
-        return null;
+        return false;
     }
 
     private static boolean isNegativeNumber(String number) {
