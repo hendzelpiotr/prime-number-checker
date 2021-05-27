@@ -15,7 +15,7 @@ public final class PrimeNumberChecker {
         } else if (isFloatingPointNumber(number)) {
             throw new IllegalArgumentException("Input is a floating point number");
         }
-        return false;
+        return null;
     }
 
     private static boolean isNotNumber(String number) {

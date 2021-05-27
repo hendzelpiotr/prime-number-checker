@@ -35,4 +35,29 @@ class PrimeNumberCheckerTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> PrimeNumberChecker.isPrimeNumber(input));
     }
 
+    @Test
+    void isPrimeNumber_shouldReturnFalseWhenInputIsNotPrime() {
+        //given
+        var input = "20";
+
+        //when
+        var isPrime = PrimeNumberChecker.isPrimeNumber(input);
+
+        //then
+        Assertions.assertFalse(isPrime);
+    }
+
+
+    @Test
+    void isPrimeNumber_shouldReturnTrueWhenInputIsPrime() {
+        //given
+        var input = "5";
+
+        //when
+        var isPrime = PrimeNumberChecker.isPrimeNumber(input);
+
+        //then
+        Assertions.assertTrue(isPrime);
+    }
+
 }
