@@ -117,3 +117,7 @@ modules.xml
 hs_err_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all
+/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+/target/maven-archiver/pom.properties
+/target/prime-number-checker-0.0.1-SNAPSHOT.jar.original
